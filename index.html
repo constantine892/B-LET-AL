@@ -1,0 +1,757 @@
+
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <style>
+
+
+    svg {
+        max-height: 500px;
+        width: 100%;
+    }
+
+    .biletkontrol {
+    width: 100%;
+    padding: 60px 0;
+    background: #f8e71c;
+    }
+
+        .biletkontrol > div {
+    width: 960px;
+    margin: auto;
+    position: relative;
+    }
+
+    .biletkontrol_title {
+    width: 100%;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+        .biletkontrol_title div {
+    flex: 1;
+    padding: 0 15px;
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+            .biletkontrol_title div h1 {
+        font-size: 36px;
+    color: #fff;
+                margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+            .biletkontrol_title div p {
+        font-size: 18px;
+    color: #fff;
+            }
+
+        .biletkontrol_title img {
+    width: 170px;
+    }
+
+    .biletkontrol_bilet {
+    width: 100%;
+        border-radius: 12px;
+    background: #FFFFFF;
+        /*min-height: 350px;*/
+        position: relative;
+    display: flex;
+    }
+
+    .biletkontrol_bilet-bilgiler {
+    width: 610px;
+    position: relative;
+    padding: 30px 50px 30px 30px;
+    }
+
+    .biletkontrol_bilet-yer {
+    /*width: 350px;*/
+    position: relative;
+    padding: 30px;
+    }
+
+    .biletkontrol_bilet-bilgiler:after {
+    width: 30px;
+    height: 30px;
+    top: -15px;
+    righT: 0;
+    background: #f8e71c;
+        border-radius: 50%;
+    content: "";
+    position: absolute;
+    }
+
+    .biletkontrol_bilet-bilgiler:before {
+    width: 30px;
+    height: 30px;
+    bottom: -15px;
+    righT: 0;
+    background: #f8e71c;
+        border-radius: 50%;
+    content: "";
+    position: absolute;
+    }
+
+    .biletkontrol_bilet-yer:after {
+        border-right: 5px dashed #f8e71c;
+        width: 5px;
+    height: 100%;
+    bottom: 0;
+    left: -17px;
+    content: "";
+    position: absolute;
+    }
+
+    .biletkontrol_bilet-cover {
+    padding: 30px 0 30px 30px;
+    display: fleX;
+        min-width: 142px;
+        flex-direction: column;
+    }
+
+    .biletkontrol_bilet-cover--cover {
+        margin-bottom: 30px;
+    }
+
+        .biletkontrol_bilet-cover--cover img {
+        border-radius: 8px;
+    }
+
+    .biletkontrol_bilet-bilgiler h2 {
+        font-weight: bold;
+        font-size: 24px;
+        max-width: 70%;
+    }
+
+        .biletkontrol_bilet-bilgiler h2 > span {
+        font-size: 16px;
+    display: block;
+    }
+
+    .biletkontrol_bilet-bilgiler li {
+        border-bottom: 2px dashed #e5e5e5;
+        display: flex;
+    width: 100%;
+    padding: 15px 0;
+    }
+
+        .biletkontrol_bilet-bilgiler li:last-child {
+    border: 0;
+    padding: 15px 0 0 0;
+    }
+
+        .biletkontrol_bilet-bilgiler li > span {
+        font-weighT: bold;
+    color: #777777;
+            width: 75px;
+        min-width: 75px;
+    }
+
+    .biletkontrol_bilet-bilgiler p {
+        font-weight: bold;
+    color: #000;
+        font-size: 18px;
+    }
+
+    .biletkontrol_bilet-yer--baslik {
+    width: 100%;
+    display: flex;
+    }
+
+        .biletkontrol_bilet-yer--baslik > li {
+    width: 50px;
+    height: 50px;
+        min-width: 50px;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+    color: #777777;
+            font-size: 12px !important;
+        text-align: center;
+        margin-right: 8px;
+    background: none !important;
+    }
+
+    .biletkontrol_bilet-yer--baslik--tip {
+    width: 95px !important;
+    height: 50px;
+        min-width: 95px !important;
+        margin-right: 0 !important;
+    }
+
+    .biletkontrol_bilet-yer--yer {
+    width: 100%;
+    }
+
+        .biletkontrol_bilet-yer--yer > li {
+    width: 100%;
+        margin-bottom: 8px;
+    }
+
+            .biletkontrol_bilet-yer--yer > li > ul {
+    width: 100%;
+    display: flex;
+    }
+
+    .satinalmaYardim b {
+    display: block;
+    }
+
+    .biletkontrol_bilet-yer--yer > li > ul > li {
+    width: 50px;
+    min-height: 50px;
+        min-width: 50px;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+    color: #000;
+        font-size: 18px;
+        text-align: center;
+        border-radius: 8px;
+    background: #EEEEEE;
+        border-radius: 8px;
+        margin-right: 8px;
+    }
+
+    .biletkontrol_bilet--tip {
+    width: 95px !important;
+    min-height: 50px;
+        min-width: 95px !important;
+        margin-right: 0 !important;
+        flex-direction: column !important;
+    }
+
+        .biletkontrol_bilet--tip span {
+        font-size: 16px;
+    }
+
+        .biletkontrol_bilet--tip b {
+        font-size: 12px;
+    }
+
+    .biletkontrol_bilet-yer strong {
+    width: 100%;
+        text-align: center;
+        font-size: 20px;
+        margin-top: 20px;
+    display: block;
+    color: #000;
+    }
+
+    .biletkontrol_oneri {
+    width: 100%;
+    display: flex;
+        padding-top: 30px;
+    }
+
+        .biletkontrol_oneri li {
+    width: 318px;
+        margin-right: 20px;
+    }
+
+            .biletkontrol_oneri li:last-child {
+        margin-right: 0;
+    }
+
+            .biletkontrol_oneri li > a {
+        text-align: Center;
+        font-size: 18px;
+        font-weight: bold;
+    color: #fff;
+                display: block;
+        padding-top: 15px;
+    }
+
+                .biletkontrol_oneri li > a:Hover {
+        text-decoration: underline;
+    }
+
+    .satinalmaYardim {
+    width: 100%;
+        text-align: center;
+    padding: 15px;
+    }
+
+        .satinalmaYardim a {
+    color: #000;
+        }
+
+            .satinalmaYardim a:Hover {
+        text-decoration: underline;
+    }
+
+    .biletkontrol_bilet-mobilReklam {
+    display: none;
+    }
+
+    .biletkontrol_bilet-mobilcover {
+    display: flex;
+    justify-content: space-between;
+    }
+
+    .map-link {
+        text-decoration: underline;
+        text-decoration-style: dotted;
+        cursor: pointer;
+        font-weight: bold;
+        color: #000;
+        font-size: 16px;
+    }
+
+    .map-link:hover {
+        text-decoration-style: solid;
+    }
+
+    /************Mobil***********/
+    @media screen and (min-width:180px) and (max-width:559px) {
+
+        .biletkontrol_bilet-yer--baslik--tip {
+            flex: 2 !important;
+        }
+
+        .biletkontrol_bilet-urun {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 30px 30px 0 30px;
+            position: relative;
+            border-top: 3px dashed #f8e71c;
+        }
+
+            .biletkontrol_bilet-urun:after {
+                width: 30px;
+                height: 30px;
+                top: -18px;
+                left: -15px;
+                background: #f8e71c;
+                border-radius: 50%;
+                content: "";
+                position: absolute;
+            }
+
+            .biletkontrol_bilet-urun:before {
+                width: 30px;
+                height: 30px;
+                top: -18px;
+                righT: -15px;
+                background: #f8e71c;
+                border-radius: 50%;
+                content: "";
+                position: absolute;
+            }
+
+            .biletkontrol_bilet-urun strong {
+                font-size: 20px;
+            }
+
+            .biletkontrol_bilet-urun ul {
+                width: 100%;
+            }
+
+                .biletkontrol_bilet-urun ul li {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    border-bottom: 2px dashed #e5e5e5;
+                    padding: 15px 0;
+                }
+
+                    .biletkontrol_bilet-urun ul li span {
+                        font-weight: bold;
+                        margin-bottom: 3px;
+                        font-size: 14px;
+                    }
+
+                    .biletkontrol_bilet-urun ul li p {
+                        margin-bottom: 3px;
+                        font-size: 14px;
+                        opacity: 0.7;
+                    }
+
+                    .biletkontrol_bilet-urun ul li:last-child {
+                        border: 0;
+                        padding-bottom: 0;
+                    }
+
+        #ticketDetail .ebilets .download-button {
+            padding: 15px !important;
+        }
+
+        .biletkontrol {
+            overflow: hidden;
+            padding: 20px 10px;
+        }
+
+        .biletkontrol_title {
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+            .biletkontrol_title div h1 {
+                font-size: 24px;
+            }
+
+        .biletkontrol > div {
+            width: 100%;
+        }
+
+        .biletkontrol_title div {
+            padding: 0 0 0 10px;
+        }
+
+            .biletkontrol_title div p {
+                font-size: 16px;
+                line-height: 22px;
+            }
+
+        .biletkontrol_bilet-cover {
+            display: none;
+        }
+
+        .biletkontrol_bilet {
+            flex-direction: column;
+        }
+
+        .biletkontrol_bilet-bilgiler {
+            padding: 20px;
+            width: 100%;
+            border-bottom: 3px dashed #f8e71c;
+        }
+
+            .biletkontrol_bilet-bilgiler li:first-child {
+                padding-top: 0;
+            }
+
+            .biletkontrol_bilet-bilgiler:before {
+                right: -15px;
+                bottom: -18px;
+            }
+
+            .biletkontrol_bilet-bilgiler:after {
+                bottom: -18px;
+                left: -15px;
+                top: Auto;
+            }
+
+        .biletkontrol_bilet-yer:after {
+            display: none;
+        }
+
+        .biletkontrol_bilet-bilgiler h2 {
+            font-size: 24px;
+            padding-right: 20px;
+            color: #000;
+        }
+
+        .biletkontrol_bilet-bilgiler p {
+            font-size: 16px;
+        }
+
+        .biletkontrol_bilet--tip {
+            flex: 2 !important;
+        }
+
+        .biletkontrol_bilet-yer--yer > li > ul > li {
+            flex: 1;
+        }
+
+        .biletkontrol_oneri {
+            flex-direction: column;
+        }
+
+            .biletkontrol_oneri li {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+                .biletkontrol_oneri li img {
+                    width: 100%;
+                }
+
+        .biletkontrol_bilet-mobilcover {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 2px dashed #e5e5e5;
+            align-items: center;
+        }
+
+        .biletkontrol_bilet {
+            position: relative;
+        }
+
+            .biletkontrol_bilet:before {
+                position: absolute;
+                top: -5px;
+                width: 90%;
+                left: 5%;
+                background: #fff;
+                opacity: 0.5;
+                -webkit-border-top-left-radius: 12px;
+                -webkit-border-top-right-radius: 12px;
+                -moz-border-radius-topleft: 12px;
+                -moz-border-radius-topright: 12px;
+                border-top-left-radius: 12px;
+                border-top-right-radius: 12px;
+                content: "";
+                height: 5px;
+            }
+
+            .biletkontrol_bilet:after {
+                position: absolute;
+                bottom: -5px;
+                width: 90%;
+                left: 5%;
+                background: #fff;
+                opacity: 0.5;
+                -webkit-border-bottom-left-radius: 12px;
+                -webkit-border-bottom-right-radius: 12px;
+                -moz-border-radius-bottomleft: 12px;
+                -moz-border-radius-bottomright: 12px;
+                border-bottom-left-radius: 12px;
+                border-bottom-right-radius: 12px;
+                content: "";
+                height: 5px;
+            }
+
+        * {
+            font-family: "SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif !important;
+        }
+    }
+    /************Tablet***********/
+    @media screen and (min-width:560px) and (max-width:1029px) {
+
+        .biletkontrol {
+            padding: 40px 20px;
+        }
+
+            .biletkontrol > div {
+                width: 100%;
+            }
+
+        .biletkontrol_bilet-cover {
+            padding: 20px 0 20px 20px;
+            display: fleX;
+            min-width: 120px;
+            flex-direction: column;
+        }
+
+        .biletkontrol_bilet-bilgiler {
+            padding: 20px;
+        }
+
+        .biletkontrol_bilet-yer {
+            padding: 20px;
+        }
+    }
+
+    @media screen and (min-width:1099px){
+
+        .biletkontrol__desktop{
+            display:flex;
+            flex-direction: column;
+            /*height:100%;*/
+            position: relative;
+        }
+        .biletkontrol_bilet-yer{
+            position: unset;
+        }
+        .biletkontrol_bilet-urun{
+            padding: 30px;
+        }
+        .biletkontrol_bilet-urun strong{
+            font-size:20px;
+            margin-bottom: 10px;
+            display:block;
+        }
+        .biletkontrol_bilet-urun ul{
+            width:100%;
+        }
+        .biletkontrol_bilet-urun ul li{
+            width:100%;
+            display:flex;
+            flex-direction: column;
+            border-top: 2px dashed #e5e5e5;
+            padding: 15px 0;
+        }
+        .biletkontrol_bilet-urun ul li span{
+            font-weight: bold;
+            margin-bottom: 3px;
+            font-size:14px;
+        }
+        .biletkontrol_bilet-urun ul li p{
+            margin-bottom: 3px;
+            font-size:14px;
+            opacity: 0.7;
+        }
+    }
+
+    </style>
+
+    <title>Bilet Kontrol | biletinial</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://b6s54eznn8xq.merlincdn.net/dist/assets/css/style.min.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="icon" sizes="16x16 32x32" href="https://b6s54eznn8xq.merlincdn.net/dist/assets/img/favicons/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="https://b6s54eznn8xq.merlincdn.net/dist/assets/img/favicons/favicon-152.png">
+</head>
+<body style="background: #f8e71c; padding-top: 10px !important;">
+    <section class="biletkontrol">
+        <div>
+            <div class="biletkontrol_title">
+                <a><img src="https://b6s54eznn8xq.merlincdn.net/dist/assets/img/logo_dark.svg" class="biletkontrol_logo" alt="Biletinial Logo"></a>
+            </div>
+            <div class="biletkontrol_bilet">
+                <div class="biletkontrol_bilet-bilgiler">
+                    <div class="biletkontrol_bilet-mobilcover">
+                        <h2>Ant-Man ve Wasp: Quantumania <span>(T&#252;rk&#231;e Dublaj)</span></h2>
+                        <div class="biletkontrol_bilet-cover--qr" style="min-width:30px;">
+<img alt="QR code" src="data:image/png;base64,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" />                            
+                        </div>
+                    </div>
+                    <ul>
+                        <li>
+                            <span>Adı</span>
+                            <p>Emir Buğra Coşkun</p>
+                        </li>
+                            <li>
+                                <span>Mekan</span>
+                                <p>Cinens Sinemaları Venezia</p>
+                            </li>
+                                                    <li>
+                                <span>Salon</span>
+                                <p>Salon 4</p>
+                            </li>
+                                                                            <li>
+                                <span>Tarih</span>
+                                    <p>25 Şub 2023 Cmt 20:15</p>
+                            </li>
+                        <li>
+                            <span>PNR</span>
+                            <p>000015220817</p>
+                        </li>
+                                                                                                    <li>
+                                <span>Konum</span>
+
+                                <a class="map-link" href="https://maps.google.com/maps?q=Cinens Sinemaları Venezia Venezia Mega Outlet Karadeniz Mah, Eski Edirne Asf. No:408, 34250 Gaziosmanpaşa / İstanbul" target="_blank">Venezia Mega Outlet Karadeniz Mah, Eski Edirne Asf. No:408, 34250 Gaziosmanpaşa / İstanbul</a>
+                            </li>
+                    </ul>
+                </div>
+                <div class="biletkontrol__desktop">
+                    <div class="biletkontrol_bilet-yer">
+                        <ul class="biletkontrol_bilet-yer--yer">
+                            <li>
+                                <ul class="biletkontrol_bilet-yer--baslik">
+                                                                            <li>Sıra</li>
+                                        <li>Koltuk</li>
+
+                                    <li class="biletkontrol_bilet-yer--baslik--tip">Bilet Tipi</li>
+                                </ul>
+                            </li>
+                                <li>
+                                    <ul>
+                                                                                        <li>F</li>
+                                                <li>6</li>
+                                        <li class="biletkontrol_bilet--tip"><span>&#214;ğrenci</span></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                                                                        <li>F</li>
+                                                <li>7 </li>
+                                        <li class="biletkontrol_bilet--tip"><span>&#214;ğrenci</span></li>
+                                    </ul>
+                                </li>
+                        </ul>
+                        
+                    </div>
+
+                </div>
+            </div>
+            <div class="biletkontrol_title" style="margin-bottom: 0 !important;">
+                <div id="ticketDetail" style="padding: 10px 0px; box-shadow: 0 0 0; border: 0;">
+                    <div class="ebilets">
+                                <a class="download-button warning" style="width: 100%; background: #a3a3a3; color: white;" download target="_blank" href="https://ebiletportal.vbt.com.tr/#/Preview/EvTicket/PDF/B88B67D5-BB8B-4420-BCDF-531C1EAE6FE4">
+                                     E-Biletini İndir
+                                </a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    
+</body>
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+
+<script src="https://b6s54eznn8xq.merlincdn.net/Content/assets/vendor/jquery/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+
+
+<script type="text/javascript">
+    const btn = document.getElementById("btnPdf");
+
+    btn.addEventListener("click", function () {
+
+
+        //const element = document.documentElement;
+        let element = document.body;
+
+        console.log("rfld111");
+        let html = document.documentElement
+        let height = Math.max(element.scrollHeight, element.offsetHeight,
+            html.clientHeight, html.scrollHeight, html.offsetHeight)
+        /*let heightCM = height / 35.35  */
+        let heightCM = height / 2.54
+        const options = {
+            filename: 'biletim.pdf',
+            /*  margin: [-2.5, 2, 0, 2],*/
+            margin: [0, 0.7],
+
+            image: { type: 'jpeg', quality:2},
+            html2canvas: {
+                scale: 1,
+                /*  dpi: 192,*/
+                useCORS: true,
+                height: 1500,
+                //weight: 2000,
+                scrollY: 0
+            },
+
+            //    format: [heightCM, 10]
+
+            jsPDF: { unit: "in", format: "a3", orientation: "p" }
+
+        };
+
+
+        html2pdf().set(options).from(element).save();
+
+
+    });
+
+</script>
+
